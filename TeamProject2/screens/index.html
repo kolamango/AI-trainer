@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 홈 트레이닝</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <script src="../static/JS/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="../static/css/index.css">
+
+    <script type="text/javascript">
+        $(document).ready(() => {
+            var i = 0;
+            var txt = 'Lorem ipsum dummy text blabla.';
+            var speed = 50;
+            const typeWriter = () => {
+                if (i < txt.length) {
+                    document.getElementsById("type").innerHTML += txt.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+        })
+    </script>
+
+</head>
+
+
+
+<body style="font-family: 'Noto Sans KR', sans-serif;">
+    <div class="header">
+        <div>인공지능 홈PT</div>
+        <div class="mene">
+
+        </div>
+    </div>
+
+    <div class="contents">
+        <div class="opacity"></div>
+        <div class="mainTitle"><p id="type">asd</p></div>
+
+
+    </div>
+    </div>
+</body>
+
+</html>

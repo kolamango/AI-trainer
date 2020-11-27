@@ -1,0 +1,154 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 홈 트레이닝</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="static/JS/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="static/css/index.css">
+    <script src="static/js/jquery-3.4.1.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                $('.sportsGroup').each(function (i) {
+                    var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+                    var bottom_of_window = $(window).scrollTop() + $(window).height();
+                    if (bottom_of_window > bottom_of_object / 2) {
+                        $(this).animate({ 'opacity': '1' }, 1000);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+
+
+
+
+
+
+<body style="font-family: 'Sunflower', sans-serif;">
+
+
+	<%		//로긴한사람이라면	 userID라는 변수에 해당 아이디가 담기고 그렇지 않으면 null값
+	String userID = null;
+	if (session.getAttribute("userID") != null) {
+		userID = (String) session.getAttribute("userID");
+	} %>
+
+    <!--Header site logo & main top tab barmenu -->
+		<div class="header">
+         <div><a class="menu-item" href="index.jsp">인공지능 홈PT</a></div>
+	    <div class="menu">
+            <a href="#" class='menu-item'>나의 다이어리</a>
+            <a href="bbs.jsp?boardID=1&pageNumber=1" class='menu-item'>운동 게시판</a>
+            <a href="bbs.jsp?boardID=2&pageNumber=1" class='menu-item'>자유 게시판</a>
+            <%if(userID == null) {%>
+            <a href="login.jsp" class='menu-item'>로그인</a>
+            <a href="signup.jsp" class='menu-item'>회원 가입</a>            
+            <%} else if(userID != null){ %>
+            <a href="logoutAction.jsp" class='menu-item'>로그아웃</a>
+            <% } %>
+        </div>
+    </div>
+    <!-- main page init UI -->
+    <div class="mainContents">
+        <div class="opacity"></div>
+        <div class="mainTitle">
+            <div class="typewriter">
+                <h5>인공지능 홈 PT</h5>
+            </div>
+        </div>
+        <div class="subTitle">
+            <p>인공지능을 통해 흥미롭게 운동을 하고, 나만의 운동기록을 확인하세요!</p>
+        </div>
+    </div>
+    <!--content A 팀소개 -->
+    <h2 class="txtSubTitle">팀 소개</h3>
+        <div class="content">
+            <div class='teamLogo bgProp'></div>
+            <div class="teamDesc">
+                <p>안녕하세요! 웹프로그래밍 9팀입니다!</p>
+                <p>Google Teachable Machine을 이용한 다양한 인공지능 운동 서비스를 </p>
+                <p>즐기며, 나만의 운동 다이러리를 기록해 보세요!</p>
+            </div>
+        </div>
+        <!--content A 팀소개 -->
+        <div class ='subTitle'>
+            <h2 class="txtSubTitle">나의 다이어리</h3>
+            <a href="#">더 보기</a>
+        </div>
+            <div class="content">
+                <!--diary content 다이어리가 없을 때 -->
+                <!-- <div class ="non-data">
+                    <p>나의 운동을 기록한 다이어리를 만들어 주세요!</p>
+                </div> -->
+                <!--diary content 저장된 다이어리가 있을 때 -->
+                <div class="diary">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h1>2020.11.01</h1>
+                                <p>스쿼트</p>
+                                <p>12회/세트 3세트 진행</p>
+                            </div>
+                            <div class="flip-card-back" style="width:300px;height:200px;">
+                                <p>앞으로도 꾸준히 운동하자!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h1>2020.11.02</h1>
+                                <p>런지</p>
+                                <p>12회/세트 3세트 진행</p>
+                            </div>
+                            <div class="flip-card-back" style="width:300px;height:200px;">
+                                <p>앞으로도 꾸준히 운동하자!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h1>2020.11.03</h1>
+                                <p>숄더프레스</p>
+                                <p>12회/세트 3세트 진행</p>
+                            </div>
+                            <div class="flip-card-back" style="width:300px;height:200px;">
+                                <p>앞으로도 꾸준히 운동하자!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--content C 인공지능 트레이닝 시작하기  -->
+            <div class ='subTitle'>
+                <h2 class="txtSubTitle">인공지능 트레이닝 시작하기</h3>
+            </div>
+                <div class="content">
+                    <div class="sportsGroup-item">
+                        <h3>스쿼트 시작하기</h3>
+                        <a href="squat.html" class="sportsGroup-sports bgImg1 bgProp"></a href="./squat.html">
+                    </div>
+                    <div class="sportsGroup-item">
+                        <h3>런지 시작하기</h3>
+                        <a href="squat.html" class="sportsGroup-sports bgImg2 bgProp"></a href="./squat.html">
+                    </div>
+
+                    <div class="sportsGroup-item">
+                        <h3>숄더프레스 시작하기</h3>
+                        <a href="squat.html" class="sportsGroup-sports bgImg3 bgProp"></a href="./squat.html">
+                    </div>
+                </div>
+</body>
+
+</html>

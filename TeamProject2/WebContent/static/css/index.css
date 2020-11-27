@@ -1,0 +1,240 @@
+body {
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color : #000
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ced4da;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    padding: 10px 30px;
+    position: absolute;
+    opacity: 0.9;
+}
+
+.menu {
+    padding-right: 3rem;
+}
+
+.menu-item {
+    font-size: 1rem;
+}
+
+.menu a {
+    outline: none;
+    margin-right: 1rem;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.mainContents {
+    background-image: url("../img/background.png");
+    width: 100%;
+    height: 800px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+}
+
+.opacity {
+    width: 100%;
+    height: 800px;
+    background-color: #fff;
+    position: absolute;
+    opacity: 0.2;
+    top: 70px;
+    z-index: 0;
+}
+
+.mainTitle {
+    z-index: 1;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.txtSubTitle {
+    margin-left: 3rem;
+}
+
+.typewriter h5 {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange;
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    color: #fff;
+    animation: typing 2.5s steps(40, end), blink-caret .75s step-end infinite;
+    margin-right: 2rem;
+}
+
+.subTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.subTitle a{
+    color: #868e96;
+    margin-left: 2rem;
+}
+
+/* The typing effect */
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent
+    }
+    80% {
+        border-color: #fff;
+    }
+}
+
+.content {
+    padding-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    /* border:1px solid #000 */
+}
+
+.teamLogo{
+    background-image: url("../img/teamLogo.png");
+    width: 300px;
+    height: 260px;
+    /* border:1px solid #000; */
+    border-radius: 100px;
+}
+
+.diary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; 
+    margin-right: 2rem;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+.sportsGroup-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 3rem;
+}
+
+.sportsGroup-sports {
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    box-shadow: 2px 5px 15px #adb5bd;
+}
+
+.bgProp {
+    background-size: contain;
+    background-repeat: no-repeat;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    background-position: center center;  
+}
+
+.bgImg1 {
+    background-image: url("../img/sports1.png");
+}
+
+.bgImg2 {
+    background-image: url("../img/sports2.png");
+}
+
+.bgImg3 {
+    background-image: url("../img/sports3.png");
+    margin-right: 0rem;
+}
+
+.sports-name{
+    border :1px solid #000;
+    align-items: flex-end;
+}

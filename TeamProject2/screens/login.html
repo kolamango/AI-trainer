@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>로그인</title>
+    <link rel="stylesheet" href="../static/css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    />
+    <script src="../static/js/jquery-3.4.1.min.js"></script>
+  </head>
+
+  <body>
+    <div class="form-box">
+      <h1><a href="index.html">웹프 9팀</a></h1>
+      <div class="login-page">
+        <form class="login-form">
+          <div class="input-box">
+            <i class="far fa-envelope"></i>
+            <input
+              id="inputId"
+              type="text"
+              placeholder="아이디"
+              autocomplete="off"
+            />
+          </div>
+          <div class="input-box">
+            <i class="fas fa-key"></i>
+            <input id="inputPw" type="password" placeholder="비밀번호" />
+            <span class="eye" onclick="viewPassword()">
+              <i id="hide1" class="far fa-eye"></i>
+              <i id="hide2" class="far fa-eye-slash"></i>
+            </span>
+          </div>
+
+          <a class="login-btn" onclick="checkValue()">로그인</a>
+          <p class="errmsg">아이디를 입력해 주세요.</p>
+          <p class="errmsg">비밀번호를 입력해 주세요.</p>
+          <p class="message"><a href="signup.html">회원가입</a></p>
+        </form>
+      </div>
+    </div>
+
+    <script src="../static/JS/loginform_checkValue.js"></script>
+    <script src="../static/JS/loginform_viewPassword.js"></script>
+  </body>
+</html>
